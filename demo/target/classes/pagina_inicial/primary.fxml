@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane minHeight="650.0" minWidth="1024.0" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pagina_inicial.PrimaryController">
+  <top>
+    <AnchorPane fx:id="AnchorPane" prefHeight="75.0" prefWidth="1285.0" styleClass="Navbar" BorderPane.alignment="CENTER">
+      <children>
+        <HBox alignment="CENTER" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="90.0" prefWidth="1280.0">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="426.0" spacing="10.0">
+              <children>
+                <ComboBox fx:id="Selec_usuario" prefWidth="150.0" promptText="Usuario" styleClass="Selector" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="426.0">
+              <children>
+                <Button fx:id="bNameApp" mnemonicParsing="false" onAction="#switchmain" styleClass="boton-titulo" text="Name App" />
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="426.0" spacing="30.0">
+              <children>
+                <Button fx:id="bInventario" mnemonicParsing="false" onAction="#switchInventory" styleClass="boton-menu" text="Inventario" />
+                <Button fx:id="bHistorial" mnemonicParsing="false" onAction="#switchHystory" styleClass="boton-menu" text="Historial" />
+                <Button fx:id="bModificarP" mnemonicParsing="false" onAction="#switchPrice" styleClass="boton-menu" text="Modificar Precios" />
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+      </children>
+    </AnchorPane>
+  </top>
+
+  <center>
+    <ScrollPane fitToWidth="true" BorderPane.alignment="CENTER">
+      <content>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+          <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+              <children>
+                <VBox fx:id="VBoxB1" alignment="CENTER" prefHeight="200.0" prefWidth="426.0" spacing="10.0" styleClass="Bascula">
+                  <children>
+                    <Label alignment="CENTER" text="1- Bascula">
+                      <font>
+                        <Font name="DejaVu Serif Bold" size="26.0" />
+                      </font>
+                    </Label>
+                    <TextField alignment="CENTER" text="0.00">
+                      <font>
+                        <Font size="40.0" />
+                      </font>
+                    </TextField>
+                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                      <children>
+                        <RadioButton mnemonicParsing="false" text="Kg" />
+                        <RadioButton mnemonicParsing="false" text="Pz" />
+                      </children>
+                    </HBox>
+                    <ComboBox editable="true" prefWidth="150.0" promptText="Material" />
+                    <VBox alignment="CENTER" prefHeight="157.0" prefWidth="420.0" spacing="5.0">
+                      <children>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="420.0" spacing="50.0">
+                          <children>
+                            <Button mnemonicParsing="false" text="Agergar" />
+                            <Button alignment="CENTER" mnemonicParsing="false" text="Limpiar" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </VBox>
+                  </children>
+                </VBox>
+                <VBox fx:id="VBoxB2" alignment="CENTER" prefHeight="200.0" prefWidth="426.0" spacing="10.0" styleClass="Bascula">
+                  <children>
+                    <Label text="2- Bascula">
+                      <font>
+                        <Font name="DejaVu Serif Bold" size="26.0" />
+                      </font>
+                    </Label>
+                    <TextField alignment="CENTER" text="0.00">
+                      <font>
+                        <Font size="40.0" />
+                      </font>
+                    </TextField>
+                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                      <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                          <children>
+                            <RadioButton mnemonicParsing="false" text="Kg" />
+                            <RadioButton mnemonicParsing="false" text="Pz" />
+                          </children>
+                        </HBox>
+                        <ComboBox editable="true" prefWidth="150.0" promptText="Material" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                          <children>
+                            <Button mnemonicParsing="false" text="Agregar" />
+                            <Button mnemonicParsing="false" text="Limpiar" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </VBox>
+                  </children>
+                </VBox>
+                <VBox fx:id="VBox3" alignment="CENTER" prefHeight="200.0" prefWidth="426.0" spacing="10.0" styleClass="Bascula">
+                  <children>
+                    <Label alignment="CENTER" text="3- Bascula">
+                      <font>
+                        <Font name="DejaVu Serif Bold" size="26.0" />
+                      </font>
+                    </Label>
+                    <TextField alignment="CENTER" text="0.00">
+                      <font>
+                        <Font size="40.0" />
+                      </font>
+                    </TextField>
+                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                      <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                          <children>
+                            <RadioButton mnemonicParsing="false" text="Kg" />
+                            <RadioButton mnemonicParsing="false" text="Pz" />
+                          </children>
+                        </HBox>
+                        <ComboBox editable="true" prefWidth="150.0" promptText="Material" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                          <children>
+                            <Button mnemonicParsing="false" text="Agregar" />
+                            <Button mnemonicParsing="false" text="Limpiar" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </VBox>
+                  </children>
+                </VBox>
+              </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+              <children>
+                <TextField prefHeight="39.0" prefWidth="190.0" text="Nombre del Cilente" />
+                <TextField prefHeight="39.0" prefWidth="190.0" text="Vendedor" />
+                <ComboBox fx:id="Selec_pago" prefWidth="150.0" promptText="Status del Pago " />
+              </children>
+            </HBox>
+            <Label text="Datos del Ticket">
+              <font>
+                <Font name="DejaVu Serif Bold" size="28.0" />
+              </font>
+            </Label>
+            <TableView fx:id="Tabla_Ticket" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Material " />
+                <TableColumn prefWidth="75.0" text="Cantidad" />
+                <TableColumn prefWidth="75.0" text="Precio de Compra" />
+                <TableColumn prefWidth="75.0" text="Importe" />
+              </columns>
+              <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+              </columnResizePolicy>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="80.0">
+              <children>
+                <Button fx:id="bLimpiarDatos" mnemonicParsing="false" styleClass="boton-opcion" text="Limpiar datos" />
+                <Button fx:id="bFinalizar" mnemonicParsing="false" styleClass="boton-opcion" text="Finalizar" />
+              </children>
+            </HBox>
+            <Label text="Ultimas Ventas">
+              <font>
+                <Font name="DejaVu Serif Bold" size="28.0" />
+              </font>
+            </Label>
+            <TableView fx:id="Tabla_UltimasVentas" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Cliente" />
+                <TableColumn prefWidth="75.0" text="Monto" />
+                <TableColumn prefWidth="75.0" text="Fecha" />
+                <TableColumn prefWidth="75.0" text="Status de pago" />
+              </columns>
+              <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+              </columnResizePolicy>
+            </TableView>
+          </children>
+        </VBox>
+      </content>
+    </ScrollPane>
+  </center>
+</BorderPane>

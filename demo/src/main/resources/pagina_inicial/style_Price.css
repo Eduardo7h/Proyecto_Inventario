@@ -1,0 +1,99 @@
+/*Fondo de la barra de navegacion*/
+.Navbar {
+    -fx-background-color: #1E40AF;
+}
+
+/*Diseño del Selector de usuario */
+/* Apariencia del selector de usuario */
+.Selector {
+    -fx-background-color: #0EA5E9;
+    -fx-background-radius: 6px;
+    -fx-border-color: transparent;
+    -fx-border-radius: 6px;
+    -fx-padding: 4px 10px;
+    -fx-font-size: 14px;
+}
+
+/* Color del texto visible en el selector */
+.Selector .list-cell {
+    -fx-text-fill: rgb(0, 0, 0);
+}
+
+/* Fondo al pasar el cursor */
+.Selector:hover {
+    -fx-background-color: #4b555f93;
+}
+
+/* Borde al recibir el foco */
+.Selector:focused {
+    -fx-border-width: 2px;
+}
+
+/* Color de la flecha del selector */
+.Selector.arrow {
+    -fx-background-color: white;
+}
+
+
+.NamePrincipal {
+    -fx-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+/* Estilo compartido para los 3 botones del menú */
+.boton-menu {
+    -fx-background-color: #0EA5E9;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 18px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+/* Efecto al pasar el ratón por encima */
+.boton-menu:hover {
+    -fx-background-color: #4b555f93;
+}
+
+/* Efecto al hacer clic */
+.boton-menu:pressed {
+    -fx-background-color: #1f618d;
+}
+
+/*Efecto para el titulo*/
+.boton-titulo {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.boton-titulo:hover {
+    -fx-background-color: transparent;
+    -fx-opacity: 0.85;
+    /* Efecto sutil al pasar el mouse */
+}
+
+.boton-titulo:pressed {
+    -fx-background-color: transparent;
+    -fx-opacity: 0.7;
+}
+
+.boton-titulo:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Clase que se agrega dinámicamente al botón de la página actual */
+.boton-activo {
+    -fx-background-color: #4b555f93;
+    /* Azul mucho más oscuro que la barra */
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
