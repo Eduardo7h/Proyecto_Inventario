@@ -25,9 +25,10 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Se crea la instancia de scene
-        scene = new Scene(loadFXML("primary"), 1280, 650);
+        scene = new Scene(loadFXML("FXML/primary"), 1280, 650);
         // Agregamos la hoja de estilos de la vista inicial.
-        scene.getStylesheets().add(getClass().getResource("style_Primary.css").toExternalForm());
+        scene.getStylesheets().add(getClass()
+                .getResource("CSS/style_Primary.css").toExternalForm());
         // agregamos al escenario
         stage.setScene(scene);
         // mostramos la ventana

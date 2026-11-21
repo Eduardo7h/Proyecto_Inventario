@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
-public class Inventory {
+public class HistoryController {
     @FXML
     private Button bHistorial;
     @FXML
@@ -44,6 +44,6 @@ public class Inventory {
         // Hint: initialize() will be called when the associated FXML has been
         // completely loaded.
         Selec_usuario.getItems().addAll("Administrador", "Vendedor", "Root");
-        bInventario.getStyleClass().add("boton-activo");
+        bHistorial.getStyleClass().add("boton-activo");
     }
 }
