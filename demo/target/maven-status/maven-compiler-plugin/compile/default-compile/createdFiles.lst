@@ -1,3 +1,6 @@
+pagina_inicial/PriceController.class
+pagina_inicial/InventoryController.class
 pagina_inicial/PrimaryController.class
 module-info.class
+pagina_inicial/HistoryController.class
 pagina_inicial/App.class
