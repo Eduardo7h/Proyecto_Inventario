@@ -8,6 +8,13 @@
             "type": "java",
             "name": "App",
             "request": "launch",
+            "mainClass": "pagina_inicial/infrastructure.pagina_inicial.App",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
             "mainClass": "prueba/prueba.App",
             "projectName": "demo2"
         },

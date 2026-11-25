@@ -40,7 +40,7 @@
                         <!-- Usage: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>pagina_inicial.App</mainClass>
+                            <mainClass>infrastructure.pagina_inicial.App</mainClass>
                         </configuration>
                     </execution>
                 </executions>

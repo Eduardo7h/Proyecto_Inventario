@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane minHeight="650.0" minWidth="1024.0" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pagina_inicial.PrimaryController">
+<BorderPane minHeight="650.0" minWidth="1024.0" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infrastructure.pagina_inicial.PrimaryController">
   <top>
     <AnchorPane fx:id="AnchorPane" prefHeight="75.0" prefWidth="1285.0" styleClass="Navbar" BorderPane.alignment="CENTER">
       <children>

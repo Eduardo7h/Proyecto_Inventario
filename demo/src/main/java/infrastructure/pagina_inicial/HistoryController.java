@@ -1,4 +1,4 @@
-package pagina_inicial;
+package infrastructure.pagina_inicial;
 
 import java.io.IOException;
 

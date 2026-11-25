@@ -1,4 +1,4 @@
-package pagina_inicial;
+package infrastructure.pagina_inicial;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -25,10 +25,10 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Se crea la instancia de scene
-        scene = new Scene(loadFXML("FXML/primary"), 1280, 650);
+        scene = new Scene(loadFXML("primary"), 1280, 650);
         // Agregamos la hoja de estilos de la vista inicial.
-        scene.getStylesheets().add(getClass()
-                .getResource("CSS/style_Primary.css").toExternalForm());
+        scene.getStylesheets().add(App.class
+                .getResource("/pagina_inicial/CSS/style_Primary.css").toExternalForm());
         // agregamos al escenario
         stage.setScene(scene);
         // mostramos la ventana
@@ -54,12 +54,13 @@ public class App extends Application {
                 break;
         }
 
-        scene.getStylesheets().setAll(
-                App.class.getResource(stylesheet).toExternalForm());
+        scene.getStylesheets().setAll(App.class
+                .getResource("/pagina_inicial/CSS/" + stylesheet).toExternalForm());
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(
+                App.class.getResource("/pagina_inicial/FXML/" + fxml + ".fxml"));
         return fxmlLoader.load();
     }
 

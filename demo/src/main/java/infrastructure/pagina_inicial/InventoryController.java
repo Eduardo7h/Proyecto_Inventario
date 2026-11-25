@@ -1,45 +1,22 @@
-package pagina_inicial;
+package infrastructure.pagina_inicial;
 
 import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableView;
-import javafx.scene.layout.AnchorPane;
 
-// Acciones de los elementos 
-public class PrimaryController {
-
-    @FXML
-    private AnchorPane AnchorPane;
+public class InventoryController {
     @FXML
     private Button bHistorial;
     @FXML
     private ComboBox<String> Selec_usuario;
     @FXML
-    private ComboBox<String> Selec_pago;
-    @FXML
-    private TableView<?> Tabla_Ticket;
-    @FXML
-    private TableView<?> Tabla_UltimasVentas;
-    @FXML
-    private Button bFinalizar;
-    @FXML
     private Button bInventario;
-    @FXML
-    private Button bLimpiarDatos;
     @FXML
     private Button bModificarP;
     @FXML
     private Button bNameApp;
-
-    @FXML
-    private void initialize() {
-        // Agregamos opciones
-        Selec_usuario.getItems().addAll("Administrador", "Vendedor", "Root");
-        Selec_pago.getItems().addAll("Pagado", "Pendiente");
-    }
 
     @FXML
     private void switchmain() throws IOException {
@@ -62,4 +39,11 @@ public class PrimaryController {
         App.setRoot("Price");
     }
 
+    @FXML
+    private void initialize() {
+        // Hint: initialize() will be called when the associated FXML has been
+        // completely loaded.
+        Selec_usuario.getItems().addAll("Administrador", "Vendedor", "Root");
+        bInventario.getStyleClass().add("boton-activo");
+    }
 }

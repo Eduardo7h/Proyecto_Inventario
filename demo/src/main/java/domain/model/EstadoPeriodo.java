@@ -1,4 +1,4 @@
-package com.reciclaje.domain.model;
+package domain.model;
 
 public enum EstadoPeriodo {
     ABIERTO,
