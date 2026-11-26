@@ -1,39 +1,51 @@
-# Guía básica del proyecto
+# Aplicación JavaFX de inventario
 
-Este repositorio contiene una aplicación de escritorio sencilla hecha con JavaFX y Maven. La aplicación abre una ventana con una vista inicial y permite alternar entre dos pantallas.
+Aplicación de escritorio construida con Java 21, JavaFX y Maven. La interfaz incluye pantallas para la vista principal, inventario, historial y modificación de precios. Por ahora, los controladores implementan principalmente la navegación entre esas pantallas; la lógica de negocio y el almacenamiento todavía están pendientes.
 
-## Carpetas
+## Estructura
 
-| Ruta | Contenido y propósito |
-| --- | --- |
-| `demo/` | Proyecto Maven que contiene el código de la aplicación. |
-| `demo/src/main/java/` | Distribucion de carpetas siguiendo la arquitectura heaxagonal. |
-| `demo/src/main/java/application/` | Es el flujo de pasos que cordinanlas reglas del dominio para cumplir el objetivo. |
-| `demo/src/main/java/application/port/in` | Interfaces definidas en la capa de dominio. |
-| `demo/src/main/java/application/out` | Son las implementaciones de los puertos. |
-| `demo/src/main/java/application/service` |  Coordina entidades del dominio, llama a puertos de salida (como repositorios o pasarelas de pago) |
-| `demo/src/main/java/domain/model` | Son las reglas que definen que esta permitido y que no, independientemente de la interfaz. |
-| `demo/src/main/java/infrastructure/` | En esta capa viven las implementaciones de las interfaces que definimos a nivel de dominio. |
-| `demo/src/main/java/infrastructure/pagina_inicial` | Archivos FXML que describen las diferentes pantallas. |
-| `demo/src/main/resources/` | Recursos que se cargan junto con la aplicación. |
+El proyecto Maven está dentro de `demo/`.
 
+```text
+demo/src/main/java/
+├── application/
+│   ├── port/in/       # Puertos de entrada (casos de uso)
+│   ├── port/out/      # Puertos hacia servicios externos (repo)
+│   └── service/       # Implementaciones de los casos de uso
+├── domain/model/      # Tipos y modelos propios del dominio
+├── infrastructure/
+│   ├── pagina_inicial/ # Aplicación JavaFX y controladores
+│   └── persistence/    # Adaptadores de almacenamiento
+└── module-info.java
 
+demo/src/main/resources/pagina_inicial/
+├── CSS/               # Hojas de estilo
+└── FXML/              # Vistas de JavaFX
+```
+
+La estructura reserva un lugar para las capas de una arquitectura hexagonal. Actualmente, `domain/model/` contiene enums de dominio y `infrastructure/pagina_inicial/` contiene la interfaz. Las carpetas de `application/` y `infrastructure/persistence/` aún no tienen implementaciones Java, así que los casos de uso, puertos y persistencia están pendientes.
 
 ## Archivos principales
 
-- `demo/pom.xml`: configura Maven, Java 21.0.08, JavaFX Controls y FXML, y el complemento para ejecutar la aplicación.
-- `demo/src/main/java/module-info.java`: declara el módulo Java `pagina_inicial`, sus dependencias JavaFX y permite que FXML acceda al paquete.
-- `demo/src/main/java/infrastructure/pagina_inicial/App.java`: punto de entrada JavaFX. Carga `primary.fxml` al iniciar y ofrece un método para cambiar la raíz de la escena.
-- `demo/src/main/java/infrastructure/pagina_inicial/PrimaryController.java`: controlador de la pantalla principal; su acción cambia a la pantalla secundaria.
-- `demo/src/main/resources/pagina_inicial/primary.fxml`: estructura visual de la pantalla principal y vínculo con `PrimaryController`.
+- `demo/pom.xml`: configura Java 21, JavaFX 21.0.8 y el complemento Maven para ejecutar la aplicación.
+- `demo/src/main/java/module-info.java`: declara el módulo Java y abre los controladores a FXML.
+- `demo/src/main/java/infrastructure/pagina_inicial/App.java`: punto de entrada; carga la vista inicial y permite cambiar de pantalla.
+- `demo/src/main/java/infrastructure/pagina_inicial/`: controladores JavaFX.
+- `demo/src/main/resources/pagina_inicial/FXML/`: archivos FXML de las vistas.
+- `demo/src/main/resources/pagina_inicial/CSS/`: estilos de las vistas.
 
+## Requisitos
+
+- JDK 21
+- Maven
 
 ## Ejecutar
 
-Desde la carpeta `demo/`, ejecuta:
+Desde la raíz del repositorio:
 
 ```sh
+cd demo
 mvn clean javafx:run
 ```
 
-Se requiere tener Maven y un JDK compatible con Java 11 instalados.
+`mvn clean` elimina clases y recursos compilados antiguos antes de iniciar la aplicación.
