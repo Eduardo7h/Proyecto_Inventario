@@ -5,6 +5,7 @@ Este repositorio contiene una aplicación de escritorio sencilla hecha con JavaF
 ## Carpetas
 
 | Ruta | Contenido y propósito |
+| --- | --- |
 | `demo/` | Proyecto Maven que contiene el código de la aplicación. |
 | `demo/src/main/java/` | Distribucion de carpetas siguiendo la arquitectura heaxagonal. |
 | `demo/src/main/java/application/` | Es el flujo de pasos que cordinanlas reglas del dominio para cumplir el objetivo. |
