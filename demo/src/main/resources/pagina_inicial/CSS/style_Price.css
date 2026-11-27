@@ -97,3 +97,80 @@
     -fx-border-radius: 4;
     -fx-background-radius: 4;
 }
+
+.TextfielBuscar {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CBD5E1;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 0 12px 0 8px;
+    -fx-spacing: 8px;
+}
+
+.TextfielBuscar:focused-within {
+    -fx-border-color: #2563EB;
+    -fx-effect: dropshadow(three-pass-box, rgba(37, 99, 235, 0.15), 6, 0, 0, 0);
+}
+
+.TextfielBuscar-input {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #1E293B;
+    -fx-prompt-text-fill: #64748B;
+    -fx-font-size: 14px;
+    -fx-padding: 6px 4px;
+}
+
+.boton_AgregarP {
+    -fx-background-color: #16A34A;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.boton_AgregarP:hover {
+    -fx-background-color: #4b555f93;
+}
+
+.Pane_lateral {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+
+    /* Borde gris muy clarito */
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 8px;
+
+    /* El detalle: un borde superior grueso de color verde */
+    -fx-border-width: 4px 1px 1px 1px;
+    -fx-border-color: #10B981 #E5E7EB #E5E7EB #E5E7EB;
+    /* Verde arriba, gris en el resto */
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 8, 0, 0, 2);
+}
+
+.bt_GC {
+    -fx-background-color: #16A34A;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+}
+
+.bt_GC:hover {
+    -fx-background-color: #4b555f93;
+}
+
+.bt_Cancelar {
+    -fx-background-color: #F1F5F9;
+    -fx-text-fill: #475569;
+    -fx-border-color: #CBD5E1;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+
+/* Efecto al pasar el ratón por encima */
+.bt_Cancelar:hover {
+    -fx-background-color: #4b555f93;
+}

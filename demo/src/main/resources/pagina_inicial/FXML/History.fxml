@@ -2,33 +2,38 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infrastructure.pagina_inicial.HistoryController">
   <top>
-    <AnchorPane BorderPane.alignment="CENTER" styleClass="Navbar">
+    <AnchorPane styleClass="Navbar" BorderPane.alignment="CENTER">
       <children>
         <HBox alignment="CENTER" prefHeight="90.0" prefWidth="1280.0">
           <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="426.0" spacing="10.0">
               <children>
-                <ComboBox fx:id="Selec_usuario" prefWidth="150.0" promptText="Usuario" styleClass="Selector"/>
+                <ComboBox fx:id="Selec_usuario" prefWidth="150.0" promptText="Usuario" styleClass="Selector" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="426.0">
               <children>
-                <Button fx:id="bNameApp" mnemonicParsing="false" styleClass="boton-titulo" text="Name App" onAction="#switchmain"/>
+                <Button fx:id="bNameApp" mnemonicParsing="false" onAction="#switchmain" styleClass="boton-titulo" text="Name App" />
               </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="426.0" spacing="30.0">
               <children>
-                <Button fx:id="bInventario" mnemonicParsing="false" styleClass="boton-menu" text="Inventario" onAction="#switchInventory"/>
-                <Button fx:id="bHistorial" mnemonicParsing="false" styleClass="boton-menu" text="Historial" onAction="#switchHystory"/>
-                <Button fx:id="bModificarP" mnemonicParsing="false" styleClass="boton-menu" text="Modificar Precios" onAction="#switchPrice"/>
+                <Button fx:id="bInventario" mnemonicParsing="false" onAction="#switchInventory" styleClass="boton-menu" text="Inventario" />
+                <Button fx:id="bHistorial" mnemonicParsing="false" onAction="#switchHystory" styleClass="boton-menu" text="Historial" />
+                <Button fx:id="bModificarP" mnemonicParsing="false" onAction="#switchPrice" styleClass="boton-menu" text="Modificar Precios" />
               </children>
             </HBox>
           </children>
@@ -40,8 +45,78 @@
   <center>
     <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0"/>
+        <TableView prefHeight="695.0" prefWidth="1034.0">
+          <columns>
+            <TableColumn prefWidth="75.0" text="Folio" />
+            <TableColumn prefWidth="75.0" text="Fecha/Hora" />
+            <TableColumn prefWidth="75.0" text="Cliente" />
+            <TableColumn prefWidth="75.0" text="Operación" />
+            <TableColumn prefWidth="75.0" text="Materiales" />
+            <TableColumn prefWidth="75.0" text="Total" />
+            <TableColumn prefWidth="75.0" text="Status" />
+            <TableColumn prefWidth="75.0" text="Acciones" />
+          </columns>
+          <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+          </columnResizePolicy>
+        </TableView>
       </content>
     </ScrollPane>
   </center>
+
+  <left>
+    <VBox alignment="TOP_CENTER" prefHeight="710.0" prefWidth="303.0" spacing="15.0" BorderPane.alignment="CENTER">
+      <children>
+        <Pane id="Pane_1" prefHeight="200.0" prefWidth="215.0" styleClass="Panel_lateral">
+          <children>
+            <Label layoutX="18.0" layoutY="14.0" prefHeight="33.0" prefWidth="269.0" text="Buscar en Historial">
+              <font>
+                <Font name="DejaVu Serif Bold" size="23.0" />
+              </font>
+            </Label>
+            <ComboBox layoutX="47.0" layoutY="74.0" prefHeight="26.0" prefWidth="210.0" promptText="Buscar por Folio o Cliente" />
+            <ComboBox layoutX="47.0" layoutY="128.0" prefHeight="26.0" prefWidth="210.0" promptText="Fecha" />
+          </children>
+        </Pane>
+        <Pane id="-Pane_2" prefHeight="202.0" prefWidth="243.0" styleClass="Panel_lateral">
+          <children>
+            <Label layoutX="38.0" layoutY="14.0" prefHeight="18.0" prefWidth="228.0" text="Compras">
+              <font>
+                <Font name="DejaVu Serif Bold" size="20.0" />
+              </font>
+            </Label>
+            <Label layoutX="43.0" layoutY="43.0" prefHeight="54.0" prefWidth="219.0" text="MX $ 00.00">
+              <font>
+                <Font name="DejaVu Serif Bold" size="30.0" />
+              </font>
+            </Label>
+            <Label layoutX="39.0" layoutY="101.0" prefHeight="18.0" prefWidth="228.0" text="Ventas">
+              <font>
+                <Font name="DejaVu Serif Bold" size="20.0" />
+              </font>
+            </Label>
+            <Label layoutX="44.0" layoutY="130.0" prefHeight="54.0" prefWidth="219.0" text="MX $ 00.00">
+              <font>
+                <Font name="DejaVu Serif Bold" size="30.0" />
+              </font>
+            </Label>
+          </children>
+        </Pane>
+        <Pane id="Pane_3" prefHeight="200.0" prefWidth="200.0" styleClass="Panel_lateral">
+          <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="61.0" prefWidth="272.0" text="Material Con Mayor Volumen ">
+              <font>
+                <Font name="DejaVu Serif Bold" size="16.0" />
+              </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="15.0" layoutY="84.0" prefHeight="33.0" prefWidth="271.0" text="Material (Peso en kg)">
+              <font>
+                <Font name="DejaVu Serif Bold" size="19.0" />
+              </font>
+            </Label>
+          </children>
+        </Pane>
+      </children>
+    </VBox>
+  </left>
 </BorderPane>
